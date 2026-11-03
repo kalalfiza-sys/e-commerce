@@ -1,0 +1,561 @@
+/* =========================================
+   SHOPNEST - MAIN STYLE CSS
+========================================= */
+
+/* GOOGLE FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+    --primary-color: #ff6b00;
+    --primary-dark: #df5c00;
+    --secondary-color: #222222;
+
+    --text-color: #555555;
+    --light-color: #f7f7f7;
+    --white: #ffffff;
+
+    --border-color: #e5e5e5;
+
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    --transition: all 0.3s ease;
+
+    --border-radius: 8px;
+}
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    outline: none;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.home-section {
+    padding: 60px 0;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.section-title span {
+    color: var(--primary-color);
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+    margin-top: -20px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 5px;
+
+    background: var(--primary-color);
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    color: var(--white);
+    background: var(--primary-color);
+}
+
+.btn-danger {
+    background: var(--danger-color);
+}
+
+.btn-success {
+    background: var(--success-color);
+}
+
+
+/* =========================================
+   PAGE BANNER
+========================================= */
+
+.page-banner {
+    background: #fff1e6;
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.page-banner h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.page-banner p {
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM STYLING
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+
+    outline: none;
+    font-size: 14px;
+
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999999;
+}
+
+
+/* =========================================
+   CARD DESIGN
+========================================= */
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================
+   ALERT MESSAGES
+========================================= */
+
+.alert {
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.alert-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+.alert-info {
+    background: #cff4fc;
+    color: #055160;
+}
+
+
+/* =========================================
+   TABLE STYLING
+========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+th,
+td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+th {
+    background: #fff1e6;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+tbody tr {
+    transition: var(--transition);
+}
+
+tbody tr:hover {
+    background: #fffaf5;
+}
+
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    background: #e8f5e9;
+    color: var(--success-color);
+}
+
+.status-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-danger {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.status-warning {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+
+/* =========================================
+   TEXT UTILITIES
+========================================= */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-danger {
+    color: var(--danger-color);
+}
+
+.text-muted {
+    color: var(--text-color);
+}
+
+
+/* =========================================
+   SPACING UTILITIES
+========================================= */
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+========================================= */
+
+.empty-message {
+    text-align: center;
+    padding: 35px 15px;
+    color: var(--text-color);
+    font-size: 15px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff9a50;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+
+/* =========================================
+   RESPONSIVE COMMON STYLING
+========================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .section,
+    .home-section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .section-description {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    .page-banner {
+        padding: 35px 15px;
+    }
+
+    .page-banner h1 {
+        font-size: 26px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .section-title {
+        font-size: 21px;
+    }
+
+    .page-banner h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+}

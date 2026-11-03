@@ -1,0 +1,126 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | ShopNest</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="stylesheet" href="../CSS/cart.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+        <a href="index.html" class="logo"><span>S</span>hopNest</a>
+
+        <form class="header-search" action="shop.html" method="get">
+            <input type="search" name="search" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="header-icons">
+            <a href="my-account.html">Account</a>
+            <a href="wishlist.html" class="active">Wishlist</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="category.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+        <h1>My Wishlist</h1>
+        <p>Home / Wishlist</p>
+    </section>
+
+    <!-- WISHLIST SECTION -->
+    <section class="wishlist-section">
+
+        <h2 class="section-title">Your Favourite Products</h2>
+
+        <div class="wishlist-container">
+
+            <div class="wishlist-heading">
+                <h3>Wishlist Items</h3>
+                <a href="shop.html" class="btn">Continue Shopping</a>
+            </div>
+
+            <!-- WISHLIST PRODUCTS -->
+            <div id="wishlistItems">
+
+                <div class="empty-wishlist">
+                    <div class="empty-icon">❤️</div>
+                    <h3>Your Wishlist is Empty!</h3>
+                    <p>Add your favourite products to your wishlist.</p>
+                    <a href="shop.html" class="btn">Explore Products</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h2>ShopNest</h2>
+                <p>Your one-stop destination for online shopping.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Customer Service</h3>
+                <a href="my-account.html">My Account</a>
+                <a href="my-orders.html">My Orders</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="wishlist.html">Wishlist</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>Email: support@shopnest.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> ShopNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../JavaScript/main.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+    <script src="../JavaScript/cart.js"></script>
+    <script src="../JavaScript/wishlist.js"></script>
+
+</body>
+</html>

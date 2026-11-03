@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | ShopNest</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/cart.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <a href="index.html" class="logo"><span>S</span>hopNest</a>
+
+        <form class="header-search" action="shop.html" method="get">
+            <input type="search" name="search" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="header-icons">
+            <a href="my-account.html">Account</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html" class="active">
+                Cart <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <nav class="main-navbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="category.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page-banner">
+        <h1>Shopping Cart</h1>
+        <p>Home / Cart</p>
+    </section>
+
+    <section class="cart-section">
+        <h2 class="section-title">Your Shopping Cart</h2>
+
+        <div class="cart-container">
+
+            <div class="cart-items-box">
+
+                <div class="cart-heading">
+                    <h3>Cart Items</h3>
+                    <span id="cartCount">0 Items</span>
+                </div>
+
+                <div id="cartItems" class="cart-items"></div>
+
+                <div class="cart-empty-message" id="emptyCartMessage">
+                    <h3>Your Cart is Empty!</h3>
+                    <p>You have not added any products to your cart yet.</p>
+                    <a href="shop.html" class="btn">Continue Shopping</a>
+                </div>
+
+                <a href="shop.html" class="continue-shopping">
+                    ← Continue Shopping
+                </a>
+
+            </div>
+
+            <div class="cart-summary">
+
+                <h3>Order Summary</h3>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">₹0.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="cartShipping">₹0.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span id="cartDiscount">₹0.00</span>
+                </div>
+
+                <hr>
+
+                <div class="summary-row total-row">
+                    <strong>Total</strong>
+                    <strong id="cartTotal">₹0.00</strong>
+                </div>
+
+                <a href="checkout.html"
+                   class="btn checkout-btn"
+                   id="checkoutButton">
+                    Proceed to Checkout
+                </a>
+
+                <div class="secure-payment">
+                    <p>🔒 Secure Shopping</p>
+                    <p>Easy and convenient checkout.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h2>ShopNest</h2>
+                <p>Your one-stop destination for online shopping.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Customer Service</h3>
+                <a href="my-account.html">My Account</a>
+                <a href="my-orders.html">My Orders</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="wishlist.html">Wishlist</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>Email: support@shopnest.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> ShopNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders | ShopNest</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" href="CSS/cart.css">
+
+    <style>
+        /* MY ORDERS PAGE */
+
+        .orders-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px 0;
+        }
+
+        .orders-container {
+            margin-top: 25px;
+        }
+
+        .orders-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .orders-heading h3 {
+            font-size: 22px;
+        }
+
+        .order-card {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .order-card-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 15px;
+        }
+
+        .order-card-heading h3 {
+            font-size: 18px;
+            color: #222222;
+        }
+
+        .order-status {
+            display: inline-block;
+            padding: 7px 14px;
+            background: #fff3e8;
+            color: #ff6b00;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .order-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .order-info p {
+            color: #555555;
+            font-size: 14px;
+        }
+
+        .order-products {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .order-products h4 {
+            margin-bottom: 12px;
+        }
+
+        .order-product-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 9px 0;
+            border-bottom: 1px solid #e9e9e9;
+            font-size: 14px;
+        }
+
+        .order-product-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-total {
+            text-align: right;
+            font-size: 19px;
+            font-weight: 700;
+            color: #ff6b00;
+            margin-top: 15px;
+        }
+
+        .empty-orders {
+            text-align: center;
+            padding: 55px 20px;
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            border-radius: 10px;
+        }
+
+        .empty-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .empty-orders h3 {
+            margin-bottom: 10px;
+        }
+
+        .empty-orders p {
+            color: #777777;
+            margin-bottom: 20px;
+        }
+
+        .customer-details {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff8f2;
+            border-radius: 8px;
+        }
+
+        .customer-details h4 {
+            margin-bottom: 10px;
+        }
+
+        .customer-details p {
+            margin: 6px 0;
+            color: #555555;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .orders-section {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .order-card {
+                padding: 15px;
+            }
+
+            .order-info {
+                grid-template-columns: 1fr;
+            }
+
+            .order-product-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .order-total {
+                text-align: left;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <a href="index.html" class="logo">
+            <span>S</span>hopNest
+        </a>
+
+        <form class="header-search" action="shop.html" method="get">
+
+            <input
+                type="search"
+                name="search"
+                placeholder="Search products..."
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+        <div class="header-icons">
+
+            <a href="my-account.html" class="active">Account</a>
+
+            <a href="wishlist.html">Wishlist</a>
+
+            <a href="cart.html">
+                Cart <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Toggle menu"
+        >
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="category.html">Categories</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PAGE BANNER -->
+    <section class="page-banner">
+
+        <h1>My Orders</h1>
+
+        <p>Home / My Account / My Orders</p>
+
+    </section>
+
+
+    <!-- ORDERS SECTION -->
+    <section class="orders-section">
+
+        <h2 class="section-title">
+            My Order History
+        </h2>
+
+        <div class="orders-container">
+
+            <div class="orders-heading">
+
+                <h3>Recent Orders</h3>
+
+                <a href="shop.html" class="btn">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+
+            <!-- ORDERS DISPLAY -->
+            <div id="ordersList">
+
+                <div class="empty-orders">
+
+                    <div class="empty-icon">📦</div>
+
+                    <h3>No Orders Found</h3>
+
+                    <p>
+                        You have not placed any orders yet.
+                    </p>
+
+                    <a href="shop.html" class="btn">
+                        Start Shopping
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h2>ShopNest</h2>
+
+                <p>
+                    Your one-stop destination for online shopping.
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+
+                <a href="shop.html">Shop</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Customer Service</h3>
+
+                <a href="my-account.html">My Account</a>
+
+                <a href="my-orders.html">My Orders</a>
+
+                <a href="cart.html">Shopping Cart</a>
+
+                <a href="wishlist.html">Wishlist</a>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Contact Us</h3>
+
+                <p>Email: support@shopnest.com</p>
+
+                <p>Phone: +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="currentYear">2026</span>
+                ShopNest. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <!-- DISPLAY ORDERS -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const ordersList = document.getElementById("ordersList");
+
+            let orders = [];
+
+            // GET ORDERS FROM LOCAL STORAGE
+            try {
+
+                const savedOrders = JSON.parse(
+                    localStorage.getItem("shopnestOrders")
+                );
+
+                orders = Array.isArray(savedOrders) ? savedOrders : [];
+
+            } catch (error) {
+
+                orders = [];
+
+            }
+
+
+            // CHECK EMPTY ORDERS
+            if (orders.length === 0) {
+
+                return;
+
+            }
+
+
+            // CLEAR EMPTY MESSAGE
+            ordersList.innerHTML = "";
+
+
+            // DISPLAY LATEST ORDER FIRST
+            orders.slice().reverse().forEach(function (order) {
+
+                const orderCard = document.createElement("div");
+
+                orderCard.className = "order-card";
+
+
+                // ORDER HEADING
+                const heading = document.createElement("div");
+
+                heading.className = "order-card-heading";
+
+
+                const orderTitle = document.createElement("h3");
+
+                orderTitle.textContent =
+                    "Order #" + (order.orderNumber || order.id || "N/A");
+
+
+                const orderStatus = document.createElement("span");
+
+                orderStatus.className = "order-status";
+
+                orderStatus.textContent = order.status || "Pending";
+
+
+                heading.append(orderTitle, orderStatus);
+
+
+                // ORDER INFORMATION
+                const orderInfo = document.createElement("div");
+
+                orderInfo.className = "order-info";
+
+
+                const orderDate = document.createElement("p");
+
+                orderDate.textContent =
+                    "Order Date: " + (order.date || "Not available");
+
+
+                const paymentMethod = document.createElement("p");
+
+                paymentMethod.textContent =
+                    "Payment: " + (order.paymentMethod || "Not available");
+
+
+                orderInfo.append(orderDate, paymentMethod);
+
+
+                // CUSTOMER INFORMATION
+                const customer = order.customer || {};
+
+                const customerBox = document.createElement("div");
+
+                customerBox.className = "customer-details";
+
+
+                const customerHeading = document.createElement("h4");
+
+                customerHeading.textContent = "Delivery Details";
+
+
+                const customerName = document.createElement("p");
+
+                customerName.textContent =
+                    "Name: " + (customer.fullName || "Not available");
+
+
+                const customerAddress = document.createElement("p");
+
+                customerAddress.textContent =
+                    "Address: " +
+                    [
+                        customer.address,
+                        customer.city,
+                        customer.pincode
+                    ].filter(Boolean).join(", ");
+
+
+                customerBox.append(
+                    customerHeading,
+                    customerName,
+                    customerAddress
+                );
+
+
+                // ORDER PRODUCTS
+                const productsBox = document.createElement("div");
+
+                productsBox.className = "order-products";
+
+
+                const productsHeading = document.createElement("h4");
+
+                productsHeading.textContent = "Ordered Products";
+
+                productsBox.appendChild(productsHeading);
+
+
+                if (Array.isArray(order.items) && order.items.length > 0) {
+
+                    order.items.forEach(function (item) {
+
+                        const productItem = document.createElement("div");
+
+                        productItem.className = "order-product-item";
+
+
+                        const productName = document.createElement("span");
+
+                        productName.textContent =
+                            (item.name || item.title || "Product") +
+                            " × " + Math.max(1, Number(item.quantity) || 1);
+
+
+                        const productPrice = document.createElement("strong");
+
+                        const price =
+                            (Number(item.price) || 0) *
+                            (Number(item.quantity) || 1);
+
+                        productPrice.textContent =
+                            "₹" + price.toFixed(2);
+
+
+                        productItem.append(productName, productPrice);
+
+                        productsBox.appendChild(productItem);
+
+                    });
+
+                } else {
+
+                    const noProducts = document.createElement("p");
+
+                    noProducts.textContent = "No product details available.";
+
+                    productsBox.appendChild(noProducts);
+
+                }
+
+
+                // ORDER TOTAL
+                const orderTotal = document.createElement("p");
+
+                orderTotal.className = "order-total";
+
+                orderTotal.textContent =
+                    "Total: ₹" + Number(order.total || 0).toFixed(2);
+
+
+                // APPEND ALL DETAILS
+                orderCard.append(
+                    heading,
+                    orderInfo,
+                    customerBox,
+                    productsBox,
+                    orderTotal
+                );
+
+                ordersList.appendChild(orderCard);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

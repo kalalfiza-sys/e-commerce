@@ -1,0 +1,46 @@
+
+.footer {
+    background: #222;
+    color: white;
+    padding: 50px 5% 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-box h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+    color: #ff6b00;
+}
+
+.footer-box p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-box a {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: .3s;
+}
+
+.footer-box a:hover {
+    color: #ff6b00;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 35px;
+    color: #bbb;
+    font-size: 13px;
+}

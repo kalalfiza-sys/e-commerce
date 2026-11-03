@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Products | ShopNest</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+    <link rel="stylesheet" href="../CSS/shop.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <a href="index.html" class="logo"><span>S</span>hopNest</a>
+
+        <form class="header-search" action="shop.html" method="get">
+            <input type="search" name="search" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="header-icons">
+            <a href="my-account.html">Account</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </header>
+
+    <nav class="main-navbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a href="category.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page-banner">
+        <h1>Our Shop</h1>
+        <p>Home / Shop</p>
+    </section>
+
+    <section class="shop-section">
+
+        <h2 class="section-title">Explore Our Products</h2>
+
+        <div class="shop-filter">
+
+            <div class="filter-search">
+                <input type="search" id="productSearch" placeholder="Search products...">
+            </div>
+
+            <div class="filter-category">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="electronics">Electronics</option>
+                </select>
+            </div>
+
+            <div class="filter-sort">
+                <select id="sortProducts">
+                    <option value="default">Sort By</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="product-container shop-product-container">
+
+            <div class="product-card" data-category="electronics">
+                <a href="product-details.html?id=1">
+                    <img src="images/smart  watch1.jpg" alt="Smart Watch">
+                </a>
+                <h3>Smart Watch</h3>
+                <p>₹1499</p>
+                <a href="product-details.html?id=1" class="btn">View Details</a>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <a href="product-details.html?id=4">
+                    <img src="images/Wireless Headphones.jpg" alt="Headphones">
+                </a>
+                <h3>Wireless Headphones</h3>
+                <p>₹999</p>
+                <a href="product-details.html?id=4" class="btn">View Details</a>
+            </div>
+
+            <div class="product-card" data-category="men">
+                <a href="product-details.html?id=2">
+                    <img src="images/t shirt1.jpg" alt="Men T-Shirt">
+                </a>
+                <h3>Men T-Shirt</h3>
+                <p>₹799</p>
+                <a href="product-details.html?id=2" class="btn">View Details</a>
+            </div>
+
+            <div class="product-card" data-category="women">
+                <a href="product-details.html?id=3">
+                    <img src="images/handbags1.jpg" alt="Women Handbag">
+                </a>
+                <h3>Women Handbag</h3>
+                <p>₹1299</p>
+                <a href="product-details.html?id=3" class="btn">View Details</a>
+            </div>
+
+        </div>
+
+        <p id="noProductsMessage" hidden>No products found.</p>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h2>ShopNest</h2>
+                <p>Your one-stop destination for online shopping.</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Customer Service</h3>
+                <a href="my-account.html">My Account</a>
+                <a href="my-orders.html">My Orders</a>
+                <a href="cart.html">Shopping Cart</a>
+                <a href="wishlist.html">Wishlist</a>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>Email: support@shopnest.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> ShopNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../JavaScript/main.js"></script>
+    <script src="../JavaScript/navbar.js"></script>
+    <script src="../JavaScript/search.js"></script>
+
+</body>
+</html>
